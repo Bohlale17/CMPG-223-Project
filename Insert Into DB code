@@ -1,15 +1,31 @@
-string _ConStr = " ";
+#Microsoft SQL connection queries
+
+string _conString = @" ";
 
         SqlConnection _connect;
+        SqlDataAdapter _adapter;
+        SqlDataReader _reader;
         SqlCommand _command;
-        SqlDataAdapter _adapt;
-        DataSet _dataset;
+        DataSet _dataSet;
+        
+         _connect = new SqlConnection(_conString);
+         _connect.Open();
+         _connect.Close();
 
- _connect.Open();
+         MessageBox.Show("Connected successfully", "Connection successful");
+         
+         #Declare variables globally
+         public int _IDNumber;
+         public String FirstName;
+         public String LastName;
+         public String VisitReason;
+         
+         #Insert Button
+         
+         _Name = txtCarName.Text;
+         _Model = txtModel.Text;
+         _Built = txtBuilt.Text;
+         _Year = int.Parse(txtYear.Text);
+         _ID = int.Parse(txtID.Text);
 
-            _command = new SqlCommand(_ConStr, _connect);
-            _adapt.UpdateCommand = new SqlCommand(_ConStr, _connect);
-            _adapt.UpdateCommand.ExecuteNonQuery();
-
-            _command.Dispose();
-            _connect.Close();
+         this.Close();
