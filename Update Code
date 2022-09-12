@@ -4,7 +4,7 @@ SqlCommand command;
 		SqlDataAdapter adapter = new SqlDataAdapter(); 
 		String sql=" ";
 		
-		sql = "Update E-Filing set Comments ='"comments.Text"+"' where IDNumber = ";
+		sql = "Update E-Filing set Comments ='"comments.Text"+"' where IDNumber = IDNumber.Text ";
 		
 		command = new SqlCommand(sql,cnn);
 		
