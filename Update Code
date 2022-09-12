@@ -1,3 +1,15 @@
 #Update code
 
-
+SqlCommand command;
+		SqlDataAdapter adapter = new SqlDataAdapter(); 
+		String sql=" ";
+		
+		sql = "Update E-Filing set Comments ='"comments.Text"+"' where IDNumber = ";
+		
+		command = new SqlCommand(sql,cnn);
+		
+		adapter.InsertCommand = new SqlCommand(sql,cnn); 
+		adapter.InsertCommand.ExecuteNonQuery;
+		
+		command.Dispose(): 
+		cnn.Close();
