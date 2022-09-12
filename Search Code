@@ -1,0 +1,22 @@
+ #Try-Catch statement to handle errors
+ 
+ try
+            {
+
+                SqlDataAdapter _adapter = new SqlDataAdapter();
+                DataSet _dataSet = new DataSet();
+
+                string _search = @"SELECT * FROM E-Filing WHERE IDNumber LIKE '%" + txtSearchName.Text + "%'";
+
+                SqlCommand command = new SqlCommand(_search, _connect);
+
+                _adapter.SelectCommand = command;
+                _adapter.Fill(_dataSet, "E-Filing");
+
+                dgShowValue.DataSource = _dataSet;
+                dgShowValue.DataMember = "E-Filing";
+            }
+            catch(Exception error) 
+            { 
+                MessageBox.Show(error.Message); 
+            }
